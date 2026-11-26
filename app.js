@@ -1,6 +1,8 @@
 const DATA_URL = "./data/codes.json";
 const REFRESH_SECONDS = 20;
-const TRIED_KEY = "xiaodou-tried-codes-v4";
+const TRIED_KEY = "xiaodou-tried-codes-v5";
+const FEED_STATE_KEY = "xiaodou-feed-state-v1";
+const REFRESH_INTERVAL_MS = REFRESH_SECONDS * 1000;
 const $ = id => document.getElementById(id);
 
 const statusNames = {
@@ -15,51 +17,21 @@ let feed = [];
 let displayCount = 0;
 let countdown = REFRESH_SECONDS;
 let toastTimer;
+let lastRefreshAt = 0;
 
 // 每个时间段分别抽取数量，避免从4分钟直接跳到47分钟。
 function buildAgeMinutes(total) {
   const ages = [];
-  const pick = (min, max) => min + Math.random() * (max - min);
-  const addBucket = (count, min, max) => {
-    for (let i = 0; i < count; i++) ages.push(pick(min, max));
+  const add = (count, min, max) => {
+    for (let i = 0; i < count; i++) ages.push(min + Math.random() * (max - min));
   };
-
-  // 近几分钟数量少而自然：刚刚2~3条，1~4分钟前每档3~4条。
-  addBucket(randIntBetween(2, 3), 0.05, 0.85);
-  addBucket(randIntBetween(3, 4), 1.02, 1.92);
-  addBucket(randIntBetween(3, 4), 2.02, 2.92);
-  addBucket(randIntBetween(3, 4), 3.02, 3.92);
-  addBucket(randIntBetween(3, 4), 4.02, 4.92);
-
-  // 余量按连续时间段分配，且不会删掉刚刚/1~4分钟前的记录。
-  let remaining = total - ages.length;
-  const buckets = [
-    {minCount:6, maxCount:8, min:5.05, max:9.95},
-    {minCount:7, maxCount:10, min:10.05, max:29.95},
-    {minCount:7, maxCount:10, min:30.05, max:59.95},
-    {minCount:4, maxCount:6, min:60.05, max:119.95},
-    {minCount:3, maxCount:5, min:120.05, max:179.95}
-  ];
-
-  for (let i = 0; i < buckets.length; i++) {
-    const bucket = buckets[i];
-    const minForLater = buckets.slice(i + 1).reduce((sum, x) => sum + x.minCount, 0);
-    const count = Math.min(
-      remaining - minForLater,
-      randIntBetween(bucket.minCount, bucket.maxCount)
-    );
-    const safeCount = Math.max(0, count);
-    addBucket(safeCount, bucket.min, bucket.max);
-    remaining -= safeCount;
-  }
-
-  // 其余分散在3~6小时，时间间隔自然，不集中在同一分钟。
-  for (let i = 0; i < remaining; i++) {
-    const band = Math.random();
-    if (band < 0.55) ages.push(pick(180.05, 239.95));
-    else if (band < 0.82) ages.push(pick(240.05, 299.95));
-    else ages.push(pick(300.05, 359.95));
-  }
+  // 刚刚2~3条，1/2/3分钟前各3~4条。
+  add(randIntBetween(2, 3), 0.03, 0.85);
+  add(randIntBetween(3, 4), 1.02, 1.95);
+  add(randIntBetween(3, 4), 2.02, 2.95);
+  add(randIntBetween(3, 4), 3.02, 3.95);
+  // 其余记录在4分钟至6小时之间连续随机分布。
+  while (ages.length < total) ages.push(4.05 + Math.random() * 355.9);
   return shuffle(ages);
 }
 function randInt(max) {
@@ -101,19 +73,12 @@ function showToast(message) {
   toastTimer = setTimeout(() => $("toast").classList.remove("show"), 2200);
 }
 function relativeTime(createdAt) {
-  const minutes = Math.max(0, (Date.now() - createdAt) / 60000);
-  if (minutes < 1) return "刚刚";
-  if (minutes < 2) return "1分钟前";
-  if (minutes < 3) return "2分钟前";
-  if (minutes < 4) return "3分钟前";
-  if (minutes < 5) return "4分钟前";
-  if (minutes < 10) return "5~10分钟前";
-  if (minutes < 30) return "10~30分钟前";
-  if (minutes < 60) return "30~60分钟前";
-  if (minutes < 120) return "1小时前";
-  if (minutes < 180) return "2小时前";
-  if (minutes < 240) return "3小时前";
-  return `${Math.floor(minutes / 60)}小时前`;
+  const elapsedMinutes = Math.max(0, Math.floor((Date.now() - createdAt) / 60000));
+  if (elapsedMinutes === 0) return "刚刚";
+  if (elapsedMinutes < 60) return `${elapsedMinutes}分钟前`;
+  const hours = Math.floor(elapsedMinutes / 60);
+  const minutes = elapsedMinutes % 60;
+  return minutes ? `${hours}小时${minutes}分钟前` : `${hours}小时前`;
 }
 function assignStatuses(items) {
   const indexes = shuffle(items.map((_, i) => i));
@@ -135,31 +100,80 @@ function assignInitialFeed() {
     createdAt: now - ages[i] * 60000
   }));
   assignStatuses(feed);
+  lastRefreshAt = now;
+  saveFeedState();
   renderLastUpdated();
   renderStats();
   renderList();
 }
-function rotateFeed() {
+function randomStatus() {
+  const n = Math.random();
+  if (n < 0.8) return "available";
+  if (n < 0.9) return "used";
+  return "verify";
+}
+function rotateFeedAt(refreshTimestamp) {
   if (!pool.length || !feed.length) return;
-
-  // 每20秒只替换1~2条，保留大部分记录及其原始时间。
   const rotateCount = Math.min(randIntBetween(1, 2), feed.length);
   const current = new Set(feed.map(x => x.code));
-  const candidates = shuffle(pool.filter(x => !current.has(x.code)));
-  const incoming = candidates.slice(0, rotateCount);
+  const incoming = shuffle(pool.filter(x => !current.has(x.code))).slice(0, rotateCount);
   if (!incoming.length) return;
 
-  // 移除最旧的记录，新增记录时间为当前时刻。
+  // 淘汰最旧记录，只给新进入的编码写入新的创建时间。
   feed.sort((a, b) => a.createdAt - b.createdAt);
   feed.splice(0, incoming.length);
   for (const source of incoming) {
-    feed.push({
-      code: source.code,
-      status: "verify",
-      createdAt: Date.now() - randInt(12000)
-    });
+    feed.push({code:source.code, status:randomStatus(), createdAt:refreshTimestamp});
   }
-  assignStatuses(feed);
+  feed = shuffle(feed);
+}
+function saveFeedState() {
+  try {
+    localStorage.setItem(FEED_STATE_KEY, JSON.stringify({feed, displayCount, lastRefreshAt}));
+  } catch (error) {
+    console.warn("无法保存邀请码列表状态", error);
+  }
+}
+function restoreFeedState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(FEED_STATE_KEY) || "null");
+    if (!saved || !Array.isArray(saved.feed) ||
+        !Number.isFinite(saved.lastRefreshAt) ||
+        saved.feed.length < 50 || saved.feed.length > 120) return false;
+
+    const validPool = new Set(pool.map(x => x.code));
+    const restored = saved.feed.filter(x =>
+      validPool.has(x.code) &&
+      Number.isFinite(x.createdAt) &&
+      ["available", "used", "verify"].includes(x.status)
+    );
+    if (restored.length !== saved.feed.length) return false;
+
+    feed = restored;
+    displayCount = feed.length;
+    lastRefreshAt = saved.lastRefreshAt;
+    return true;
+  } catch {
+    return false;
+  }
+}
+function catchUpRefreshes() {
+  const now = Date.now();
+  let nextTick = lastRefreshAt + REFRESH_INTERVAL_MS;
+  let changed = false;
+
+  // 页面离开期间错过的刷新按原时间戳补齐，不重新生成整份列表。
+  while (nextTick <= now) {
+    rotateFeedAt(nextTick);
+    lastRefreshAt = nextTick;
+    nextTick += REFRESH_INTERVAL_MS;
+    changed = true;
+  }
+  if (changed) saveFeedState();
+
+  renderLastUpdated();
+  renderStats();
+  renderList();
 }
 function effectiveStatus(item, tried) {
   return tried.has(item.code) ? "tried" : item.status;
@@ -193,27 +207,40 @@ function renderList() {
     </div>`).join("") : '<div class="empty">没有找到匹配的邀请码</div>';
 }
 function renderLastUpdated() {
-  $("lastUpdated").textContent = new Date().toLocaleString("zh-CN", {
+  const timestamp = lastRefreshAt || Date.now();
+  $("lastUpdated").textContent = new Date(timestamp).toLocaleString("zh-CN", {
     year:"numeric", month:"2-digit", day:"2-digit",
     hour:"2-digit", minute:"2-digit", second:"2-digit",
     hour12:false
   });
 }
 async function loadPool() {
-  const response = await fetch(`${DATA_URL}?v=${Date.now()}`, {cache:"no-store"});
+  const response = await fetch(`${DATA_URL}?v=1`, {cache:"force-cache"});
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   const payload = await response.json();
   pool = Array.isArray(payload.codes) ? payload.codes.filter(x => /^[A-Z0-9]{6}$/.test(x.code)) : [];
   if (pool.length < 120) throw new Error("码库不足120条");
-  assignInitialFeed();
+
+  if (!restoreFeedState()) assignInitialFeed();
+  else catchUpRefreshes();
+  updateCountdown();
 }
 function refreshFeed() {
-  rotateFeed();
+  const scheduledTimestamp = lastRefreshAt + REFRESH_INTERVAL_MS;
+  if (scheduledTimestamp > Date.now()) return;
+  rotateFeedAt(scheduledTimestamp);
+  lastRefreshAt = scheduledTimestamp;
+  saveFeedState();
   renderLastUpdated();
   renderStats();
   renderList();
-  countdown = REFRESH_SECONDS;
-  $("countdown").textContent = countdown;
+  updateCountdown();
+}
+function updateCountdown() {
+  const nextAt = lastRefreshAt + REFRESH_INTERVAL_MS;
+  const remaining = Math.max(0, Math.ceil((nextAt - Date.now()) / 1000));
+  countdown = remaining;
+  $("countdown").textContent = remaining;
 }
 function addManualCode() {
   const code = $("manualCode").value.trim().toUpperCase();
@@ -228,6 +255,7 @@ function addManualCode() {
   feed.push({code,status:"verify",createdAt:Date.now()});
   displayCount = feed.length;
   assignStatuses(feed);
+  saveFeedState();
   $("manualCode").value = "";
   renderStats();
   renderList();
@@ -261,8 +289,12 @@ $("searchInput").addEventListener("input", renderList);
 $("sortSelect").addEventListener("change", renderList);
 $("filterSelect").addEventListener("change", renderList);
 $("refreshBtn").addEventListener("click", () => {
+  if (Date.now() < lastRefreshAt + REFRESH_INTERVAL_MS) {
+    showToast("下一次自动刷新还未到时间");
+    return;
+  }
   refreshFeed();
-  showToast("码库已轮换刷新");
+  showToast("码库已按时间戳刷新");
 });
 
 loadPool().catch(error => {
@@ -270,7 +302,12 @@ loadPool().catch(error => {
   showToast(error.message);
 });
 setInterval(() => {
-  countdown -= 1;
-  if (countdown <= 0) refreshFeed();
-  else $("countdown").textContent = countdown;
+  if (!lastRefreshAt) return;
+  if (Date.now() >= lastRefreshAt + REFRESH_INTERVAL_MS) {
+    refreshFeed();
+  } else {
+    updateCountdown();
+    renderStats();
+    renderList();
+  }
 }, 1000);
