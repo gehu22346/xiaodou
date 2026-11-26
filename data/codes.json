@@ -1,40 +1,826 @@
 {
-  "updated_at": "2026-11-26 17:05:00",
+  "demo_mode": true,
+  "updated_at": "演示数据 · 页面实时刷新",
   "codes": [
     {
-      "code": "R0B0TS",
+      "code": "2DT8GX",
       "status": "available",
-      "source": "X / @Budgetlander",
-      "author": "@Budgetlander",
-      "created_at": "2026-11-26T17:01:00+08:00"
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
     },
     {
-      "code": "L1GHTS",
+      "code": "2UB6SW",
       "status": "available",
-      "source": "X / @Budgetlander",
-      "author": "@Budgetlander",
-      "created_at": "2026-11-26T17:01:00+08:00"
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
     },
     {
-      "code": "SP4CEX",
+      "code": "3LA9RW",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "3RW4MH",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "4AV6DT",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "5HJ6ND",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "5NM4ZV",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "5WE6NM",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "5YQ4BA",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "6NX9DS",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "6TU8EM",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "7BF9GH",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "7BK2VE",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "7EF6MQ",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "7HZ8AJ",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "7LR5EP",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "8GQ5SF",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "8MV2LC",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "8QD4JH",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "9JG3WQ",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "9MG6UF",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "AV7W3C",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "AW4ZG7",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "B4PK7G",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "B6F8GW",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "BF9V8Q",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "BK2U8X",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "BS53PL",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "BW65KR",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "C6Q7FB",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "CD79SV",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "CJ2H8F",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "CJ52WE",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "CQ4UV6",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "CU65SK",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "D7ZX2U",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "D9G6PF",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "D9UK5Q",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "DG9NM3",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "DP3R5H",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "E4QX3K",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "EP2Y9S",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "F4ZA8K",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "F5WL8Y",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "FD2RM9",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "FK68GL",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "GF5ZP8",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "GK37CY",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "GM64UC",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "GM7J3A",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "HU7FB9",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "HU9EK7",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "J6G3MK",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "J7VL8A",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "JE36DY",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "JG5PK2",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "JV3Z4F",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "JZ2VP8",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "K3DA4U",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "K6AL7S",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "KX62JZ",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "L9U8HK",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "LA6ZH7",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "LH93CD",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "LV24BN",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "M2E4JN",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "M9CZ4U",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "MF9K6V",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "MQ84BU",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "N2B3DM",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "N8KE2A",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "NE67TU",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "P5YS2V",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "P7UF6A",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "PS9LD7",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "PT67WJ",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "Q5PN6Z",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "QE9X6K",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "QH38XV",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "QW65BT",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "R3D7PU",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "S4G5PH",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "S4V7DQ",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "SC62PY",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "SV6Z5R",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "T2XH3Z",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "T7F4WK",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "TC37KV",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "TD34MG",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "TW56SK",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "TW8H5M",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "U2PK7B",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "U5C3PW",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "U5R7NA",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "U5VW3P",
+      "status": "available",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "UD2FL4",
       "status": "used",
-      "source": "X / @omoinе20826",
-      "author": "@omoine20826",
-      "created_at": "2026-11-26T16:47:00+08:00"
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
     },
     {
-      "code": "B0UGHT",
-      "status": "available",
-      "source": "X / @Budgetlander",
-      "author": "@Budgetlander",
-      "created_at": "2026-11-26T16:46:00+08:00"
+      "code": "UW9BX8",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
     },
     {
-      "code": "C0FFEE",
-      "status": "available",
-      "source": "X / @Budgetlander",
-      "author": "@Budgetlander",
-      "created_at": "2026-11-26T16:46:00+08:00"
+      "code": "V2X8BQ",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "V6ZF2E",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "V8PL5K",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "V9Y8ZK",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "WM7V4X",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "X2UC8G",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "X3ND2W",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "X7F4WL",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "XN27SR",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "Y7P8ME",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "YJ25PL",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "YQ5L8M",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "YU2PS7",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "Z3M4AK",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "Z5X4JT",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "Z6FL8G",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "Z8F5TU",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "ZD7YU4",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "ZN72LV",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
+    },
+    {
+      "code": "ZT3JM9",
+      "status": "used",
+      "source": "",
+      "author": "",
+      "created_at": "2026-11-26T18:09:00+08:00"
     }
-  ]
+  ],
+  "demo_recent_count": 32
 }

@@ -17,26 +17,15 @@
       <h1>小豆邀请码抓码站</h1>
       <p>社区收集的豆包小豆邀请码，不只盯 X —— 微博、LINUX DO 等平台的公开分享也一并收录。邀请码需符合 6 位字母数字格式，并经过基础过滤。一个码只能用一次，越新越有机会，请尽快尝试。</p>
     </header>
-
-    <section class="notice">
-      <div>
-        <h2>AS纪元</h2>
-        <strong>新模型、新玩法、新手毛，群里先知道。</strong>
-        <p>扫一扫二维码，加入群聊 · 点击二维码可放大保存</p>
-      </div>
-      <img id="groupQr" src="./assets/group-qr-placeholder.svg" alt="群聊二维码">
-    </section>
-
     <section class="summary">
-      <div><label>最后更新（数据源）</label><b id="lastUpdated">等待数据加载</b></div>
-      <div><label>数据更新方式</label><b>静态 JSON 数据</b><small>网站每 20 秒重新读取一次</small></div>
+      <div><label>最后更新</label><b id="lastUpdated">实时更新中</b></div>
       <div><label>下次刷新</label><b><span id="countdown">20</span> 秒　<button id="refreshBtn" class="inline-btn">立即刷新</button></b></div>
-      <div><label>当前收录</label><b><span id="totalCount">0</span> 个码，其中可能可用 <span id="availableCount">0</span> 个 · 已使用 <span id="usedCount">0</span> 个 · 15 分钟内新码 <span id="recentCount">0</span> 个</b></div>
+      <div><label>当前收录</label><b><span id="totalCount">117</span> 个码，其中可能可用 <span id="availableCount">95</span> 个 · 已使用 <span id="usedCount">22</span> 个 · 10 分钟内新码 <span id="recentCount">32</span> 个</b></div>
     </section>
 
     <section class="intro">
       <h2>邀请码</h2>
-      <p>新码在上，15 分钟内收录的会标记「实时新码」。本站默认要求邀请码为 6 位字母数字，且同时包含字母和数字。邀请码状态仅供社区参考，并非官方核验结果。点击「我试过」后会在当前浏览器本地记录，下次访问仍然保留。</p>
+      <p>最新收录的码排在前面。邀请码为 6 位字母数字组合，状态仅供参考，并非官方核验结果。点击「我试过」后会在当前浏览器本地记录。当前页面使用随机演示数据，不能作为真实可用的邀请码。</p>
     </section>
 
     <section class="submit-row">
@@ -45,7 +34,7 @@
     </section>
 
     <section class="toolbar">
-      <input id="searchInput" type="search" placeholder="搜邀请码 / 作者 / 平台">
+      <input id="searchInput" type="search" placeholder="搜索邀请码">
       <select id="sortSelect" aria-label="排序">
         <option value="newest">最新在前</option>
         <option value="oldest">最早在前</option>
@@ -61,7 +50,7 @@
 
     <section class="list-card">
       <div class="list-heading">
-        <span>时间</span><span>邀请码</span><span>状态</span><span>来源</span><span>操作</span>
+        <span>时间</span><span>邀请码</span><span>状态</span><span>操作</span>
       </div>
       <div id="codeList"><div class="empty">正在加载邀请码…</div></div>
     </section>
@@ -73,13 +62,6 @@
   </main>
 
   <div id="toast" class="toast" role="status"></div>
-  <div id="qrModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button id="closeModal" class="close-btn" aria-label="关闭">×</button>
-      <img src="./assets/group-qr-placeholder.svg" alt="群聊二维码预览">
-      <p>将自己的群聊二维码替换到 assets/group-qr-placeholder.svg</p>
-    </div>
-  </div>
   <script src="./app.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ body{margin:0;background:#edf2ed;color:#14251b;font-family:Arial,"Microsoft YaHe
 .notice{margin-top:16px;border:3px solid #ff941d;border-radius:23px;background:#fff7e7;min-height:168px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 20px #b87a2515}
 .notice h2{font-size:25px;margin:0 0 5px}.notice strong{color:#c8370c;font-size:16px}.notice p{color:#7d7d70;margin:8px 0 0;font-size:14px}
 .notice img{width:124px;height:124px;object-fit:contain;border-radius:14px;background:white;cursor:zoom-in}
-.summary{margin-top:16px;background:#fff;border:1px solid #dce6dd;border-radius:22px;padding:8px 0;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 8px 24px #102b1b0b}
+.summary{margin-top:16px;background:#fff;border:1px solid #dce6dd;border-radius:22px;padding:8px 0;display:grid;grid-template-columns:repeat(3,1fr);box-shadow:0 8px 24px #102b1b0b}
 .summary>div{padding:14px 20px;border-right:1px solid #dce6dd;min-width:0}.summary>div:last-child{border:0}
 .summary label{display:block;color:#536b5d;font-size:14px;margin-bottom:8px}.summary b{font-size:17px;line-height:1.5;display:block}.summary small{display:block;color:#75877c;margin-top:2px;font-size:13px}
 .inline-btn{border:1px solid #dce6dd;background:white;border-radius:20px;padding:7px 12px;font-weight:bold;cursor:pointer}
@@ -27,7 +27,7 @@ body{margin:0;background:#edf2ed;color:#14251b;font-family:Arial,"Microsoft YaHe
 .submit-row input{flex:1}.primary-btn{background:#08723a;color:white;border:0;border-radius:24px;padding:0 20px;font-weight:bold;cursor:pointer}
 .toolbar input{flex:1}.toolbar select{min-width:150px;font-weight:bold}
 .list-card{margin-top:12px;background:#fff;border:1px dashed #cddbd0;border-radius:18px;overflow:hidden}
-.list-heading,.code-row{display:grid;grid-template-columns:100px 1.1fr 110px 1fr 130px;align-items:center;gap:10px;padding:13px 18px}
+.list-heading,.code-row{display:grid;grid-template-columns:90px 1.2fr 110px 100px;align-items:center;gap:10px;padding:13px 18px}
 .list-heading{font-size:13px;color:#829187;border-bottom:1px solid #e8eee9}
 .code-row{border-bottom:1px solid #edf1ed;font-size:14px;min-height:54px}.code-row:last-child{border-bottom:0}
 .code-row.available{background:#eff9f1;border-left:3px solid #21b75c}
@@ -41,15 +41,12 @@ body{margin:0;background:#edf2ed;color:#14251b;font-family:Arial,"Microsoft YaHe
 footer{text-align:center;color:#89958c;font-size:12px;padding:18px}
 .toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#142a1d;color:white;border-radius:9px;padding:10px 16px;opacity:0;transition:.2s;pointer-events:none;z-index:10}
 .toast.show{opacity:1}
-.modal{display:none;position:fixed;inset:0;background:#000b;z-index:20;align-items:center;justify-content:center;padding:20px}
-.modal.open{display:flex}.modal-content{position:relative;background:white;border-radius:16px;padding:20px;text-align:center;max-width:420px;width:100%}
-.modal-content img{width:100%;max-height:65vh;object-fit:contain}.modal-content p{font-size:12px;color:#78857c}
-.close-btn{position:absolute;right:10px;top:5px;border:0;background:none;font-size:28px;cursor:pointer}
 @media(max-width:760px){
 .page{margin:12px 10px 30px}.hero{padding:22px 18px;border-radius:18px}.hero h1{font-size:29px}.hero p{font-size:14px}
 .notice{min-height:130px}.notice img{width:92px;height:92px}.summary{grid-template-columns:repeat(2,1fr)}
-.summary>div:nth-child(2){border-right:0}.summary>div:nth-child(-n+2){border-bottom:1px solid #dce6dd}
+.summary>div:nth-child(1),.summary>div:nth-child(2){border-bottom:1px solid #dce6dd}
+.summary>div:nth-child(2){border-right:0}.summary>div:last-child{border-right:0}
 .summary>div{padding:12px}.summary b{font-size:14px}.toolbar select{min-width:105px}
-.list-heading,.code-row{grid-template-columns:48px 1fr 65px 75px 65px;padding:11px 8px;gap:5px}
+.list-heading,.code-row{grid-template-columns:48px 1fr 65px 78px;padding:11px 8px;gap:5px}
 .list-heading{font-size:11px}.code-row{font-size:12px}.code{font-size:14px;letter-spacing:1px}.ops{gap:2px}.ops button{font-size:11px}
 }
