@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+<rect width="360" height="360" rx="28" fill="#fff"/>
+<rect x="18" y="18" width="324" height="324" rx="22" fill="#f2f8f4" stroke="#d7e5db" stroke-width="4"/>
+<g fill="#1675a8"><rect x="54" y="54" width="72" height="72" rx="9"/><rect x="234" y="54" width="72" height="72" rx="9"/><rect x="54" y="234" width="72" height="72" rx="9"/></g>
+<g fill="#fff"><rect x="68" y="68" width="44" height="44" rx="5"/><rect x="248" y="68" width="44" height="44" rx="5"/><rect x="68" y="248" width="44" height="44" rx="5"/></g>
+<g fill="#1675a8"><rect x="80" y="80" width="20" height="20"/><rect x="260" y="80" width="20" height="20"/><rect x="80" y="260" width="20" height="20"/><rect x="160" y="72" width="18" height="18"/><rect x="188" y="100" width="18" height="18"/><rect x="150" y="145" width="60" height="60" rx="8"/><rect x="235" y="165" width="18" height="18"/><rect x="180" y="245" width="18" height="18"/><rect x="220" y="280" width="18" height="18"/></g>
+<text x="180" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#527260">替换为自己的群聊二维码</text>
+</svg>
